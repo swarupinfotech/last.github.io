@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <title>Delete Record</title>
+  </head>
+  <style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: Black;
+  }
+  li {
+    float: left;}
+  li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}  li a:hover, .dropdown:hover .dropbtn {
+    background-color: #dd2163;
+}  .dropdown-content a {
+    color: black;
+    padding: 2px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}/* General */  h1,h2,h3,h4,h5,h6 {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: bold;
+}  a {
+  color: red;
+}  .learn_more-link {
+  display: block;
+  position: relative;
+  border: 8px solid black;
+}  .learn_more-link:hover {
+  background: rgba(221, 33, 99, 0.75);
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+}  .learn_more img {
+  opacity: .33;
+}  .learn_more-text {
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+}  @media (max-width: 7px) {    .learn_more-item {
+    margin: 0 0 10rem;
+  }  .learn_more {
+    margin-bottom: 10rem;
+  }
+}.dropdown-content a:hover {background-color: #f1f1f1}.dropdown:hover .dropdown-content {
+    display: block;
+}</style>
+<body>
+    <ul>
+    <li><a href="{% url 'student:student_list' %}" class="learn_more-link">Home</a></li>
+    </ul><br>
+    <form method="post">{% csrf_token %}
+      <h3>Are you sure you want to delete "{{ object }}" ?</h3><br><br>
+      <button type="Delete" name="Delete" value="Delete" class="btn btn-warning">Delete</button>
+    </form>
+    </body>
+</html>
